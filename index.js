@@ -57,34 +57,23 @@ const findSum = ((n1-n2) * (n3)) %n4
 console.log(findSum)
 
 const roadTrip =(speed, mpg) => {
-    
-    const totalGallons = 175/3
+    const budget = 175
+    const totalGallons = budget/3
     const totalMiles = 1500
     const milesPergallon = mpg
     const gasNeeded = totalMiles/milesPergallon
+    const amountSpent = gasNeeded * 3
 
 
-    if(speed == 55 && gasNeeded < totalGallons){
+    if( gasNeeded < totalGallons){
         
-        console.log(`At 55 miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip which is under your budget of ${totalGallons} gallons.`)
-
-    }
-    else if(speed == 60 && gasNeeded < totalGallons){
-        
-        console.log(`At 60 miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip which is under your budget of ${totalGallons} gallons.`)
-
-    }
-    else if(speed == 75 && gasNeeded < totalGallons){
-        
-        console.log(`At 60 miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip which is under your budget of ${totalGallons} gallons.`)
-
+        console.log(`At ${speed} miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip. The Trip will cost you ${amountSpent}, which is under your budget of ${budget} dollars.`)
     }
     else if(gasNeeded > totalGallons){
         
-        console.log(`At ${speed} miles per hour, you will need ${gasNeeded} gallons of gas to reach your destiniation. This exceeds your budget for gas by ${gasNeeded-totalGallons} gallons.`)
+        console.log(`At ${speed} miles per hour, you will need ${gasNeeded} gallons of gas to reach your destiniation at a cost of ${amountSpent} dollars. This exceeds your budget for gas of ${budget} dollars.`)
 
     }
 }
 
-
-roadTrip(55, 30)
+roadTrip(75, 20)
