@@ -56,13 +56,35 @@ const findSum = ((n1-n2) * (n3)) %n4
 
 console.log(findSum)
 
-let gasMileage = 30
-const totalGallons = 175 /3
-const totalMiles = 1500
+const roadTrip =(speed, mpg) => {
+    
+    const totalGallons = 175/3
+    const totalMiles = 1500
+    const milesPergallon = mpg
+    const gasNeeded = totalMiles/milesPergallon
 
-const driveFiftyfive = 
-console.log(`At 55 miles per hour, it will take you ${totalMiles/55} hours to reach your destination.  If you get ${gasMileage} miles per gallon, you will need ${totalMiles/gasMileage} gallons to complete the trip.`)
 
-let gasMileage = 28
-const driveSixty
-console.log(`At 60 miles per hour, it will take you ${totalMiles/55} hours to reach your destination.  If you get ${gasMileage} miles per gallon, you will need ${totalMiles/gasMileage} gallons to complete the trip.`)
+    if(speed == 55 && gasNeeded < totalGallons){
+        
+        console.log(`At 55 miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip which is under your budget of ${totalGallons} gallons.`)
+
+    }
+    else if(speed == 60 && gasNeeded < totalGallons){
+        
+        console.log(`At 60 miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip which is under your budget of ${totalGallons} gallons.`)
+
+    }
+    else if(speed == 75 && gasNeeded < totalGallons){
+        
+        console.log(`At 60 miles per hour, it will take you ${totalMiles/speed} hours to reach your destination.  If you get ${milesPergallon} miles per gallon, you will need ${gasNeeded} gallons to complete the trip which is under your budget of ${totalGallons} gallons.`)
+
+    }
+    else if(gasNeeded > totalGallons){
+        
+        console.log(`At ${speed} miles per hour, you will need ${gasNeeded} gallons of gas to reach your destiniation. This exceeds your budget for gas by ${gasNeeded-totalGallons} gallons.`)
+
+    }
+}
+
+
+roadTrip(55, 30)
